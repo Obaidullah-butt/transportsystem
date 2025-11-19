@@ -154,7 +154,7 @@ public function rejectVehicle($id)
 
 public function showAvailable()
     {
-        $availableVehicles = Vehicle::where('status', 'approved')->where('is_booked', 'no')->with('user')->get();
+        $availableVehicles = Vehicle::where('status', 'approved')->with('user')->get();
 
         return view('admin.seeavailable', compact('availableVehicles'));
     }
